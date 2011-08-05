@@ -36,3 +36,20 @@
   '(progn
      (color-theme-tango)))
 
+(require 'php-mode)
+(autoload 'php-mode "php-mode" "Major mode for editing php code." t)
+(add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
+(add-to-list 'auto-mode-alist '("\\.inc$" . php-mode))
+
+(require 'sr-speedbar)
+
+;;;;Change backup behavior to save in a directory, not in a miscellany
+;;;;of files all over the place.
+(setq
+ backup-by-copying t      ; don't clobber symlinks
+ backup-directory-alist
+ '(("." . "~/.saves"))    ; don't litter my fs tree
+ delete-old-versions t
+ kept-new-versions 6
+ kept-old-versions 2
+ version-control t)       ; use versioned backups
