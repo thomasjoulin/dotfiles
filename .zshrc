@@ -1,11 +1,15 @@
-PROMPT="<${at_bold}thomas@nephtys${at_boldoff}(${fg_cyan}%~${at_normal})> "
+function parse_git_branch
+{
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
+PROMPT="<${at_bold}thomas@nephtys${at_boldoff}(${fg_cyan}%~${at_normal})$(parse_git_branch)> "
  
 #Set the auto completion on
 autoload -U compinit
 compinit
  
 #Lets set some options
-setopt correctall
 setopt autocd
 setopt auto_resume
 unsetopt beep
@@ -14,7 +18,7 @@ unsetopt beep
 setopt extendedglob
  
 #Set some ZSH styles
-zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
+zstyle ':completion:*:descriptions' format ''
 zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
  
 HISTFILE=~/.zsh-histfile
@@ -23,7 +27,9 @@ SAVEHIST=1000
  
 #Aliases
 ##ls, the common ones I use a lot shortened for rapid fire usage
+
 alias templater='cd /Applications/MAMP/htdocs/ibizapp/'
+alias thaihosting='cd /Users/thomasjoulin/Dropbox/Work/Thaihosting/Dev/ThaiHosting'
 alias minify='java -jar /usr/bin/yuicompressor'
 alias ls='ls -G' #I like color
 alias l='ls -lFh'     #size,show type,human readable
@@ -32,9 +38,11 @@ alias lr='ls -tRFh'   #sorted by date,recursive,show type,human readable
 alias lt='ls -ltFh'   #long list,sorted by date,show type,human readable
 alias ftpth='ftp 202.142.223.143'
 alias e="emacs"
-
+alias tun="ssh -N -f thomas@morgankorchia.com -L3128:localhost:3128"
+alias smor="ssh thomas@morgankorchia.com"
 alias gco="git checkout"
 alias grm="git rebase master"
+alias clean='rm *~ \#*\# *~ ; l'
 
 ##cd, because typing the backslash is ALOT of work!!
 alias .='cd ../'
@@ -43,7 +51,6 @@ alias ...='cd ../../../'
 alias ....='cd ../../../../'
  
 # SSH aliases - short cuts to ssh to a host
-#alias -g shost='ssh -p 9999 user@host.com'
  
 # Screen aliases - add a new screen , or entire session, name it, then ssh to the host
 #alias sshost='screen -t HOST shost'
