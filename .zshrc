@@ -1,18 +1,35 @@
-function parse_git_branch
-{
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
-}
 
-PROMPT="<${at_bold}thomas@nephtys${at_boldoff}(${fg_cyan}%~${at_normal})$(parse_git_branch)> "
+
+
+# Initialize colors.
+autoload -U colors
+colors
  
 #Set the auto completion on
 autoload -U compinit
 compinit
+
+# Autoload zsh functions.
+fpath=(~/.zsh/functions $fpath)
+autoload -U ~/.zsh/functions/*(:t)
+
+# Enable auto-execution of functions.
+typeset -ga preexec_functions
+typeset -ga precmd_functions
+typeset -ga chpwd_functions
+
+# Append git functions needed for prompt.
+preexec_functions+='preexec_update_git_vars'
+precmd_functions+='precmd_update_git_vars'
+chpwd_functions+='chpwd_update_git_vars'
  
 #Lets set some options
 setopt autocd
 setopt auto_resume
 unsetopt beep
+
+# Allow for functions in the prompt.
+setopt PROMPT_SUBST
  
 ## EnaBles the extgended globbing features
 setopt extendedglob
@@ -25,6 +42,8 @@ HISTFILE=~/.zsh-histfile
 HISTSIZE=1000
 SAVEHIST=1000
  
+PROMPT=$'(${fg_cyan}%~$(prompt_git_info)%{${fg[default]}%}> '
+
 #Aliases
 ##ls, the common ones I use a lot shortened for rapid fire usage
 
