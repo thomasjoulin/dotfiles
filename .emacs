@@ -1,6 +1,11 @@
 (add-to-list 'load-path "~/.emacs.d/plugins")
 (add-to-list 'load-path "~/.emacs.d/themes")
 
+(require 'smooth-scroll)
+(smooth-scroll-mode t)
+(setq scroll-step            1
+      scroll-conservatively  10000)
+
 (require 'auto-complete-config)
 (add-to-list 'ac-dictionary-directories "/Users/thomasjoulin/.emacs.d/plugins/ac-dict")
 (ac-config-default)
@@ -11,6 +16,8 @@
 (setq linum-format "%d ")
 
 (global-set-key "\C-l" 'goto-line)
+
+(setq-default sgml-basic-offset 4)
 
 (require 'highlight-current-line)
 (highlight-current-line-on t)

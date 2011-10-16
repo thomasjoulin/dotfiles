@@ -42,12 +42,16 @@ HISTFILE=~/.zsh-histfile
 HISTSIZE=1000
 SAVEHIST=1000
  
-PROMPT=$'(${fg_cyan}%~$(prompt_git_info)%{${fg[default]}%}> '
+PROMPT=$'${fg_cyan}\\$$(prompt_git_info)%{${fg[default]}%}${fg_cyan}>%{${fg[default]}%} '
+RPROMPT='${fg_cyan}%~%{${fg[default]}%}'
+
 
 #Aliases
 ##ls, the common ones I use a lot shortened for rapid fire usage
 
+alias pngcrush='/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/pngcrush'
 alias templater='cd /Applications/MAMP/htdocs/ibizapp/'
+alias generator='cd /Users/thomasjoulin/Dropbox/Work/Thaihosting/Dev/ibizapp/trunk/generator/'
 alias thaihosting='cd /Users/thomasjoulin/Dropbox/Work/Thaihosting/Dev/ThaiHosting'
 alias minify='java -jar /usr/bin/yuicompressor'
 alias ls='ls -G' #I like color
