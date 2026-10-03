@@ -1,0 +1,116 @@
+[font]
+normal = { family = "MesloLGM Nerd Font Mono", style = "Regular" }
+size = 15
+
+[keyboard]
+
+[[keyboard.bindings]]
+chars = "\u0002\""
+key = "E"
+mods = "Command" # split tmux window vertically
+
+[[keyboard.bindings]]
+chars = "\u0002%"
+key = "E"
+mods = "Command|Shift" # split tmux window horizontally
+
+[[keyboard.bindings]]
+chars = "\u0002c"
+key = "T"
+mods = "Command" # create a new tmux window
+
+[[keyboard.bindings]]
+chars = "\u0002&"
+key = "W"
+mods = "Command" # kill the current pane
+
+[[keyboard.bindings]]
+chars = "\u0002n"
+key = "Tab"
+mods = "Control" # switch to next tmux window
+
+[[keyboard.bindings]]
+chars = "\u0002p"
+key = "`"
+mods = "Control" # switch to previous tmux window
+
+[[keyboard.bindings]]
+chars = "\u0002,"
+key = "Comma"
+mods = "Command" # rename the current tmux window
+
+[[keyboard.bindings]]
+chars = "\u0002p"
+key = "LBracket"
+mods = "Command|Shift" # switch to next tmux window
+
+[[keyboard.bindings]]
+chars = "\u0002n"
+key = "RBracket"
+mods = "Command|Shift" # switch to previous tmux window
+
+[[keyboard.bindings]]
+chars = "\u00021"
+key = "Key1"
+mods = "Command" # select tmux window 1
+
+[[keyboard.bindings]]
+chars = "\u00022"
+key = "Key2"
+mods = "Command" #                ... 2
+
+[[keyboard.bindings]]
+chars = "\u00023"
+key = "Key3"
+mods = "Command" #                ... 3
+
+[[keyboard.bindings]]
+chars = "\u00024"
+key = "Key4"
+mods = "Command" #                ... 4
+
+[[keyboard.bindings]]
+chars = "\u00025"
+key = "Key5"
+mods = "Command" #                ... 5
+
+[[keyboard.bindings]]
+chars = "\u00026"
+key = "Key6"
+mods = "Command" #                ... 6
+
+[[keyboard.bindings]]
+chars = "\u00027"
+key = "Key7"
+mods = "Command" #                ... 7
+
+[[keyboard.bindings]]
+chars = "\u00028"
+key = "Key8"
+mods = "Command" #                ... 8
+
+[[keyboard.bindings]]
+chars = "\u00029"
+key = "Key9"
+mods = "Command" #                ... 9
+
+[[keyboard.bindings]]
+chars = "\u0002\u001b[D"
+key = "Left"
+mods = "Command" # switch to tmux pane on the left
+
+[[keyboard.bindings]]
+chars = "\u0002\u001b[C"
+key = "Right"
+mods = "Command" # switch to tmux pane on the right
+
+[[keyboard.bindings]]
+chars = "\u0002\u001b[B"
+key = "Down"
+mods = "Command" # switch to tmux pane on the bottom
+
+[[keyboard.bindings]]
+chars = "\u0002\u001b[A"
+key = "Up"
+mods = "Command" # switch to tmux pane on the top
+
