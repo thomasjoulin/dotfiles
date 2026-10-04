@@ -20,34 +20,14 @@ key = "T"
 mods = "Command" # create a new tmux window
 
 [[keyboard.bindings]]
-chars = "\u0002&"
+chars = "\u0002x"
 key = "W"
 mods = "Command" # kill the current pane
 
 [[keyboard.bindings]]
-chars = "\u0002n"
-key = "Tab"
-mods = "Control" # switch to next tmux window
-
-[[keyboard.bindings]]
-chars = "\u0002p"
-key = "`"
-mods = "Control" # switch to previous tmux window
-
-[[keyboard.bindings]]
-chars = "\u0002,"
-key = "Comma"
-mods = "Command" # rename the current tmux window
-
-[[keyboard.bindings]]
-chars = "\u0002p"
-key = "LBracket"
-mods = "Command|Shift" # switch to next tmux window
-
-[[keyboard.bindings]]
-chars = "\u0002n"
-key = "RBracket"
-mods = "Command|Shift" # switch to previous tmux window
+chars = "\u0002&"
+key = "W"
+mods = "Command|Shift" # kill the current window
 
 [[keyboard.bindings]]
 chars = "\u00021"
