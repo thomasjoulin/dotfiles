@@ -99,3 +99,13 @@ chars = "\u001b\r"
 key = "Return"
 mods = "Alt" # send ESC+CR (meta-enter) for option+enter newline
 
+[[keyboard.bindings]]
+chars = "\u001bb"
+key = "Left"
+mods = "Alt" # readline backward-word for option+left
+
+[[keyboard.bindings]]
+chars = "\u001bf"
+key = "Right"
+mods = "Alt" # readline forward-word for option+right
+
