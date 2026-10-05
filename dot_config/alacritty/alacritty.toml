@@ -94,3 +94,8 @@ chars = "\u0002\u001b[A"
 key = "Up"
 mods = "Command" # switch to tmux pane on the top
 
+[[keyboard.bindings]]
+chars = "\u001b\r"
+key = "Return"
+mods = "Alt" # send ESC+CR (meta-enter) for option+enter newline
+
