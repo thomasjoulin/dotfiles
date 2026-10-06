@@ -76,3 +76,14 @@ tmux() {
     command tmux "$@"
   fi
 }
+
+proxy_start() {
+  export https_proxy="http://localhost:8888"
+  export HTTPS_PROXY="http://localhost:8888"
+  export http_proxy="http://localhost:8888"
+  export HTTP_PROXY="http://localhost:8888"
+}
+
+proxy_stop() {
+  unset https_proxy HTTPS_PROXY http_proxy HTTP_PROXY
+}
