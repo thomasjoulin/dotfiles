@@ -1,0 +1,9 @@
+[cleanup]
+default_mode = "merged"
+
+[scripts]
+post_create_async = """
+if [ -f "$AUTOWT_WORKTREE_DIR/Shared/Packages/VikiSecret/Scripts/Vault/pull.sh" ]; then
+  sh Shared/Packages/VikiSecret/Scripts/Vault/pull.sh
+fi
+"""
