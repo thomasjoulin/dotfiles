@@ -1,0 +1,33 @@
+[user]
+	email = {{ .personalEmail }}
+	name = Thomas Joulin
+[includeIf "hasconfig:remote.*.url:**viki-org/**"]
+	path = ~/.gitconfig-viki
+[core]
+	editor = emacs
+	excludesfile = ~/.gitignore_global
+[core]
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true
+    dark = true
+[push]
+	autoSetupRemote = true
+{{- if stat "/Users/Shared/RakutenCertificates" }}
+[url "https://github.com/"]
+	insteadOf = git@github.com:
+[http]
+	sslCAPath = /Users/Shared/RakutenCertificates
+	sslCAInfo = /Users/Shared/RakutenCertificates/rak-ca-bundle.pem
+{{- end }}
+[credential]
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[credential "https://github.com"]
+	username = thomasjoulin
