@@ -8,8 +8,6 @@ plugins=(
   zsh-autosuggestions
 )
 
-source $HOME/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 source $ZSH/oh-my-zsh.sh
 
 setopt AUTO_PARAM_SLASH
